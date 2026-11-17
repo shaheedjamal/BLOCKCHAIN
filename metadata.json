@@ -1,0 +1,6 @@
+{
+  "name": "CivicLedger — Land Record Management System",
+  "description": "Permissioned blockchain-backed land record management system with multi-role workflow, SHA-256 document verification, GIS parcel visualization, and audit logging (academic demonstration).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  civicledger-app:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+      JWT_SECRET: ${JWT_SECRET:-change_me_in_production}
+      DB_PATH: /app/data/land_records.db
+      STORAGE_DIR: /app/storage/documents
+      BACKUP_DIR: /app/backups
+      FABRIC_NETWORK_MODE: simulated
+    volumes:
+      - civicledger_data:/app/data
+      - civicledger_storage:/app/storage
+      - civicledger_backups:/app/backups
+    restart: unless-stopped
+
+volumes:
+  civicledger_data:
+  civicledger_storage:
+  civicledger_backups:
